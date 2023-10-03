@@ -1,6 +1,7 @@
 package com.example.springbatch;
 
 import org.springframework.batch.core.Job;
+import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -12,18 +13,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
-public class JobInstanceConfiguration {
+import java.util.Date;
+import java.util.Map;
 
-//    @Autowired
+@Configuration
+public class JobParameterConfiguration {
+
+    @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
-//    @Autowired
+    @Autowired
     private StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Job job() {
-        return jobBuilderFactory.get("job")
+    public Job batchJob() {
+        return jobBuilderFactory.get("Job")
                 .start(step1())
                 .next(step2())
                 .build();
@@ -34,6 +38,18 @@ public class JobInstanceConfiguration {
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
+
+                        JobParameters jobParameters = contribution.getStepExecution().getJobExecution().getJobParameters();
+
+                        String name = jobParameters.getString("name");
+                        Long seq = jobParameters.getLong("seq");
+                        Date date = jobParameters.getDate("date");
+                        Double age = jobParameters.getDouble("age");
+
+                        Map<String, Object> jobParameters1 = chunkContext.getStepContext().getJobParameters();
+
+
+                        System.out.println("step1 has executed");
                         return RepeatStatus.FINISHED;
                     }
                 })
@@ -45,9 +61,11 @@ public class JobInstanceConfiguration {
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
+                        System.out.println("step2 has executed");
                         return RepeatStatus.FINISHED;
                     }
                 })
                 .build();
     }
+
 }
