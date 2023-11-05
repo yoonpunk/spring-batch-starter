@@ -7,8 +7,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableBatchProcessing
-@ComponentScan(basePackages = {"com.example.springbatch.domain"}) // chunk 실습
-//@ComponentScan(basePackages = {"com.example.springbatch.chunk"}) // chunk 실습
+//@ComponentScan(basePackages = {"com.example.springbatch.domain.job"}) // 3장 job 실습
+@ComponentScan(basePackages = {"com.example.springbatch.domain.jobinstance"}) // 3장 jobinstance 실습
+//@ComponentScan(basePackages = {"com.example.springbatch.chunk"}) // 7장 chunk 실습
 public class SpringBatchApplication {
 
     public static void main(String[] args) {

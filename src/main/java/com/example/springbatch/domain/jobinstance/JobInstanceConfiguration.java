@@ -1,4 +1,4 @@
-package com.example.springbatch;
+package com.example.springbatch.domain.jobinstance;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -12,13 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 public class JobInstanceConfiguration {
 
-//    @Autowired
+    @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
-//    @Autowired
+    @Autowired
     private StepBuilderFactory stepBuilderFactory;
 
     @Bean
