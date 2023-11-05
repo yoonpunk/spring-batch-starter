@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableBatchProcessing
-@ComponentScan(basePackages = {"com.example.springbatch.chunk"}) // chunk 실습
+@ComponentScan(basePackages = {"com.example.springbatch.domain"}) // chunk 실습
+//@ComponentScan(basePackages = {"com.example.springbatch.chunk"}) // chunk 실습
 public class SpringBatchApplication {
 
     public static void main(String[] args) {
