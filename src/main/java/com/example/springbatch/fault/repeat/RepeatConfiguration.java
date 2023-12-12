@@ -1,4 +1,4 @@
-package com.example.springbatch.repeat;
+package com.example.springbatch.fault.repeat;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
