@@ -14,7 +14,8 @@ import org.springframework.context.annotation.ComponentScan;
 //@ComponentScan(basePackages = {"com.example.springbatch.domain.step"}) // 4장 step 실습
 //@ComponentScan(basePackages = {"com.example.springbatch.domain.stepexecution"}) // 4장 step 실습
 //@ComponentScan(basePackages = {"com.example.springbatch.chunk"}) // 7장 chunk 실습
-@ComponentScan(basePackages = {"com.example.springbatch.fault.repeat"}) // 11장 repeat 실습
+//@ComponentScan(basePackages = {"com.example.springbatch.fault.repeat"}) // 11장 repeat 실습
+@ComponentScan(basePackages = {"com.example.springbatch.fault.tolerant"}) // 11장 faultTolerant 실습
 public class SpringBatchApplication {
 
     public static void main(String[] args) {
