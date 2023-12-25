@@ -12,11 +12,12 @@ import org.springframework.context.annotation.ComponentScan;
 //@ComponentScan(basePackages = {"com.example.springbatch.domain.jobparameters"}) // 3장 jobParameters 실습
 //@ComponentScan(basePackages = {"com.example.springbatch.domain.jobexecution"}) // 3장 jobExecution 실습
 //@ComponentScan(basePackages = {"com.example.springbatch.domain.step"}) // 4장 step 실습
-//@ComponentScan(basePackages = {"com.example.springbatch.domain.stepexecution"}) // 4장 step 실습
+//@ComponentScan(basePackages = {"com.example.springbatch.domain.stepexecution"}) // 4장 stepExecution 실습
+@ComponentScan(basePackages = {"com.example.springbatch.domain.stepcontribution"}) // 4장 stepContribution 실습
 //@ComponentScan(basePackages = {"com.example.springbatch.chunk"}) // 7장 chunk 실습
 //@ComponentScan(basePackages = {"com.example.springbatch.fault.repeat"}) // 11장 repeat 실습
 //@ComponentScan(basePackages = {"com.example.springbatch.fault.tolerant"}) // 11장 faultTolerant 실습
-@ComponentScan(basePackages = {"com.example.springbatch.fault.skip"}) // 11장 skip 실습
+//@ComponentScan(basePackages = {"com.example.springbatch.fault.skip"}) // 11장 skip 실습
 public class SpringBatchApplication {
 
     public static void main(String[] args) {
